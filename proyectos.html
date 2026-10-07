@@ -32,15 +32,29 @@
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   html{background:#050505;}
   body{
-    background:#050505;
+    background:
+      radial-gradient(ellipse 900px 600px at 0% 15%, rgba(130,166,148,0.05), transparent 60%),
+      radial-gradient(ellipse 900px 700px at 100% 75%, rgba(130,166,148,0.045), transparent 60%),
+      #050505;
+    background-attachment:fixed;
     color:#FAF5EE;
     font-family:'Inter',sans-serif;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
+    position:relative;
   }
+  body::before{
+    content:'';
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:radial-gradient(rgba(130,166,148,0.09) 1px, transparent 1px);
+    background-size:34px 34px;
+    mask-image:radial-gradient(ellipse 80% 70% at 50% 30%, #000 20%, transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 30%, #000 20%, transparent 75%);
+  }
+  header, main, section, footer, .cookie-banner{position:relative;z-index:1;}
   img{max-width:100%;display:block;}
   a{color:inherit;}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px;}
 
   h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;letter-spacing:-0.01em;color:#FFFFFF;font-optical-sizing:auto;}
 
@@ -66,6 +80,11 @@
     position:relative;overflow:hidden;
     padding:88px 0 60px;
   }
+  .hero-watermark{
+    position:absolute;top:-10%;right:-8%;width:62%;max-width:720px;opacity:0.5;
+    pointer-events:none;z-index:0;
+  }
+  .hero-grid{position:relative;z-index:1;}
   .hero-grid{
     display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:center;
   }
@@ -95,11 +114,11 @@
     position:relative;display:flex;justify-content:center;
   }
   .hero-photo{
-    width:100%;max-width:320px;aspect-ratio:1/1.05;border-radius:6px;
+    width:100%;max-width:320px;aspect-ratio:4/5;border-radius:6px;
     overflow:hidden;border:1px solid rgba(130,166,148,0.25);
     box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);
   }
-  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 12%;}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;}
   .hero-tag{
     position:absolute;bottom:-16px;left:-16px;background:#0B0D0B;border:1px solid rgba(130,166,148,0.3);
     padding:10px 16px;border-radius:4px;font-size:0.78rem;color:#82A694;font-weight:600;
@@ -109,7 +128,8 @@
   .terrain-divider{width:100%;height:auto;display:block;opacity:0.9;}
 
   /* ---------- SECTION shared ---------- */
-  section{padding:76px 0;background:#050505;}
+  section{padding:76px 0;}
+  section.tint{background:rgba(10,12,10,0.45);}
   .section-head{max-width:560px;margin-bottom:48px;}
   .section-kicker{color:#82A694;font-size:0.85rem;font-weight:600;margin-bottom:10px;}
   .section-head h2{font-size:2.1rem;color:#FFFFFF;line-height:1.15;font-weight:700;}
@@ -174,7 +194,7 @@
 
   /* ---------- PORTFOLIO ---------- */
   .portfolio{border-top:1px solid rgba(130,166,148,0.12);}
-  .port-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
   .port-card{
     display:block;text-decoration:none;border:1px solid rgba(130,166,148,0.16);
     border-radius:6px;overflow:hidden;background:#0A0B0A;transition:border-color .2s;
@@ -192,7 +212,7 @@
   .about{background:#0A0B0A;border-top:1px solid rgba(130,166,148,0.12);border-bottom:1px solid rgba(130,166,148,0.12);}
   .about-grid{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:center;}
   .about-photo{width:220px;height:220px;border-radius:50%;overflow:hidden;border:2px solid rgba(130,166,148,0.4);}
-  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 8%;}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;}
   .about-text p{color:#C9C4BA;font-size:1rem;margin-bottom:14px;max-width:560px;}
   .about-text p:last-child{margin-bottom:0;}
   .about-text strong{color:#FAF5EE;}
@@ -210,6 +230,10 @@
   .footer-links a{text-decoration:none;transition:color .18s;}
   .footer-links a:hover{color:#82A694;}
   .footer-loc{color:#8C8880;font-size:0.8rem;margin-top:14px;text-align:center;}
+
+  @media (max-width: 980px) and (min-width: 861px){
+    .port-grid{grid-template-columns:1fr 1fr;}
+  }
 
   @media (max-width: 860px){
     .service-list{grid-template-columns:1fr;}
@@ -348,6 +372,34 @@
   .testi-card p.author{color:#82A694;font-size:0.82rem;font-weight:600;}
   @media (max-width:860px){.testi-grid{grid-template-columns:1fr;}}
 
+  /* ---------- TRUST STRIP ---------- */
+  .trust-strip{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px;}
+  .trust-strip span{
+    display:flex;align-items:center;gap:7px;font-size:0.82rem;color:#C9C4BA;
+  }
+  .trust-strip svg{width:15px;height:15px;color:#82A694;flex-shrink:0;}
+
+  /* ---------- NICHE CARD ICON + HOVER ---------- */
+  .niche-card{transition:border-color .2s,transform .2s;}
+  .niche-card:hover{border-color:rgba(130,166,148,0.5);transform:translateY(-2px);}
+  .niche-icon{
+    width:36px;height:36px;border-radius:50%;border:1px solid rgba(130,166,148,0.35);
+    display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+  }
+  .niche-icon svg{width:16px;height:16px;}
+
+  /* ---------- PILLAR ICON ---------- */
+  .pillar-icon{
+    width:40px;height:40px;border-radius:50%;border:1px solid rgba(130,166,148,0.35);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .pillar-icon svg{width:18px;height:18px;}
+
+  /* ---------- PORTFOLIO THUMB (custom scenes) ---------- */
+  .port-thumb{position:relative;overflow:hidden;}
+  .port-thumb svg{width:100%;height:100%;position:relative;z-index:1;}
+  .port-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
+
 </style>
 <script type="application/ld+json">
 {
@@ -415,7 +467,7 @@
     <div class="port-grid reveal">
       <a class="port-card" href="https://richard-richi.github.io/Alto-Tajo-Aventura" target="_blank" rel="noopener">
         <div class="port-thumb">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.5"><path d="M3 21l6-6M9 3h6l6 6-9 9-6-6 3-9z"/></svg>
+          <img src="img/alto-tajo-preview.png" alt="Captura de la landing page Alto Tajo Aventura" loading="lazy">
         </div>
         <div class="port-body">
           <div class="kicker">Landing page</div>
@@ -425,15 +477,25 @@
       </a>
       <a class="port-card" href="https://richard-richi.github.io/restaurante-noma/" target="_blank" rel="noopener">
         <div class="port-thumb">
-          <img src="img/noma-preview.jpg" alt="Restaurante Noma"></div>
+          <img src="img/noma-preview.png" alt="Captura de la web de Restaurante Noma" loading="lazy">
+        </div>
         <div class="port-body">
           <div class="kicker">Landing page</div>
           <h3>Restaurante Noma</h3>
           <p>Web de restaurante con carta y reserva de mesa.</p>
         </div>
       </a>
+      <a class="port-card" href="https://richard-richi.github.io/inmobiliaria-arcada" target="_blank" rel="noopener">
+        <div class="port-thumb">
+          <img src="img/arcada-preview.png" alt="Captura de la web de Inmobiliaria Arcada" loading="lazy">
+        </div>
+        <div class="port-body">
+          <div class="kicker">Landing page</div>
+          <h3>Inmobiliaria Arcada</h3>
+          <p>Catálogo de propiedades con fichas claras y contacto directo.</p>
+        </div>
+      </a>
     </div>
-    <div class="soon-card">Próximamente: casos reales de clientes, con el problema de partida y el resultado conseguido.</div>
   </div>
 </section>
 
