@@ -26,6 +26,13 @@
 <meta name="twitter:description" content="Contacta con Richard Richi Studio por WhatsApp o email para pedir presupuesto de tu web.">
 <meta name="twitter:image" content="https://www.richardrichistudio.es/img/og-image.jpg">
 
+<script>
+(function(){
+  var ok = "IntersectionObserver" in window &&
+           !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  if(ok) document.documentElement.classList.add("js-reveal");
+})();
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -33,8 +40,8 @@
   html{background:#050505;}
   body{
     background:
-      radial-gradient(ellipse 900px 600px at 0% 15%, rgba(130,166,148,0.05), transparent 60%),
-      radial-gradient(ellipse 900px 700px at 100% 75%, rgba(130,166,148,0.045), transparent 60%),
+      radial-gradient(ellipse 1100px 700px at 0% 10%, rgba(130,166,148,0.07), transparent 60%),
+      radial-gradient(ellipse 1100px 800px at 100% 70%, rgba(130,166,148,0.06), transparent 60%),
       #050505;
     background-attachment:fixed;
     color:#FAF5EE;
@@ -51,10 +58,21 @@
     mask-image:radial-gradient(ellipse 80% 70% at 50% 30%, #000 20%, transparent 75%);
     -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 30%, #000 20%, transparent 75%);
   }
+  /* líneas diagonales sutiles, solo visibles en los márgenes sobrantes de pantallas muy anchas */
+  body::after{
+    content:'';
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:repeating-linear-gradient(115deg, transparent, transparent 38px, rgba(130,166,148,0.06) 38px, rgba(130,166,148,0.06) 39px);
+    mask-image:linear-gradient(to right, #000 0%, #000 10%, transparent 20%, transparent 80%, #000 90%, #000 100%);
+    -webkit-mask-image:linear-gradient(to right, #000 0%, #000 10%, transparent 20%, transparent 80%, #000 90%, #000 100%);
+  }
   header, main, section, footer, .cookie-banner{position:relative;z-index:1;}
   img{max-width:100%;display:block;}
   a{color:inherit;}
   .wrap{max-width:1280px;margin:0 auto;padding:0 32px;}
+  @media (min-width:1900px){
+    .wrap{max-width:1440px;}
+  }
 
   h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;letter-spacing:-0.01em;color:#FFFFFF;font-optical-sizing:auto;}
 
@@ -64,7 +82,10 @@
     background:#050505;
     border-bottom:1px solid rgba(130,166,148,0.14);
   }
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1120px;margin:0 auto;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1280px;margin:0 auto;}
+  @media (min-width:1900px){
+    .nav{max-width:1440px;}
+  }
   .nav-brand{display:flex;align-items:center;gap:10px;}
   .nav-brand img{height:30px;width:auto;}
   .nav-brand span{font-family:'Fraunces',serif;font-weight:600;font-size:1.02rem;}
@@ -200,7 +221,7 @@
     border-radius:6px;overflow:hidden;background:#0A0B0A;transition:border-color .2s;
   }
   .port-card:hover{border-color:rgba(130,166,148,0.5);}
-  .port-thumb{height:170px;display:flex;align-items:center;justify-content:center;background:
+  .port-thumb{height:220px;display:flex;align-items:center;justify-content:center;background:
       linear-gradient(150deg, rgba(130,166,148,0.14), rgba(5,5,5,0.4));}
   .port-thumb svg{width:46px;height:46px;opacity:0.8;}
   .port-body{padding:20px 22px;}
@@ -212,7 +233,7 @@
   .about{background:#0A0B0A;border-top:1px solid rgba(130,166,148,0.12);border-bottom:1px solid rgba(130,166,148,0.12);}
   .about-grid{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:center;}
   .about-photo{width:220px;height:220px;border-radius:50%;overflow:hidden;border:2px solid rgba(130,166,148,0.4);}
-  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 35%;}
   .about-text p{color:#C9C4BA;font-size:1rem;margin-bottom:14px;max-width:560px;}
   .about-text p:last-child{margin-bottom:0;}
   .about-text strong{color:#FAF5EE;}
@@ -337,8 +358,9 @@
   @media (max-width:500px){.cookie-actions{justify-content:stretch;}.cookie-actions button{flex:1;}}
 
   /* ---------- SCROLL REVEAL ---------- */
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
-  .reveal.is-visible{opacity:1;transform:translateY(0);}
+  /* El contenido es visible por defecto; solo se oculta si el JS confirma que la animación puede funcionar */
+  .js-reveal .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
+  .js-reveal .reveal.is-visible{opacity:1;transform:translateY(0);}
 
   /* ---------- FAQ ---------- */
   .faq{max-width:760px;}
@@ -398,7 +420,7 @@
   /* ---------- PORTFOLIO THUMB (custom scenes) ---------- */
   .port-thumb{position:relative;overflow:hidden;}
   .port-thumb svg{width:100%;height:100%;position:relative;z-index:1;}
-  .port-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
+  .port-thumb img{width:100%;height:100%;object-fit:contain;object-position:top center;display:block;}
 
 </style>
 <script type="application/ld+json">
@@ -551,21 +573,28 @@
 
 <script>
 (function(){
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var items = document.querySelectorAll(".reveal");
-  if(!("IntersectionObserver" in window)){
-    items.forEach(function(el){ el.classList.add("is-visible"); });
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add("is-visible");
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  items.forEach(function(el){ io.observe(el); });
+  function showAll(){ items.forEach(function(el){ el.classList.add("is-visible"); }); }
+  if(!document.documentElement.classList.contains("js-reveal")){ return; }
+  try {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.01, rootMargin: "0px 0px -4% 0px" });
+    items.forEach(function(el){ io.observe(el); });
+    // red de seguridad: si algo que ya está en pantalla sigue oculto tras 1,5 s, se muestra
+    setTimeout(function(){
+      items.forEach(function(el){
+        if(!el.classList.contains("is-visible") && el.getBoundingClientRect().top < window.innerHeight){
+          el.classList.add("is-visible");
+        }
+      });
+    }, 1500);
+  } catch(e) { showAll(); }
 })();
 </script>
 
