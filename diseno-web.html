@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#050505">
 <title>Diseño web a medida — Richard Richi Studio</title>
 <meta name="description" content="Diseño, rediseño, landing pages y mantenimiento web para negocios locales. Sin plantillas genéricas, precio cerrado y sin sorpresas.">
-<link rel="canonical" href="https://www.richardrichistudio.es/diseno-web.html">
+<link rel="canonical" href="https://richardrichistudio.es/diseno-web.html">
 
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
@@ -16,15 +16,15 @@
 <meta property="og:title" content="Diseño web a medida — Richard Richi Studio">
 <meta property="og:description" content="Diseño, rediseño, landing pages y mantenimiento web para negocios locales. Sin plantillas genéricas, precio cerrado y sin sorpresas.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.richardrichistudio.es/diseno-web.html">
+<meta property="og:url" content="https://richardrichistudio.es/diseno-web.html">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image" content="https://www.richardrichistudio.es/img/og-image.jpg">
+<meta property="og:image" content="https://richardrichistudio.es/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Diseño web a medida — Richard Richi Studio">
 <meta name="twitter:description" content="Diseño, rediseño, landing pages y mantenimiento web para negocios locales. Sin plantillas genéricas, precio cerrado y sin sorpresas.">
-<meta name="twitter:image" content="https://www.richardrichistudio.es/img/og-image.jpg">
+<meta name="twitter:image" content="https://richardrichistudio.es/img/og-image.jpg">
 
 <script>
 (function(){
@@ -33,6 +33,8 @@
   if(ok) document.documentElement.classList.add("js-reveal");
 })();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -174,7 +176,7 @@
     display:flex;align-items:center;justify-content:center;flex-shrink:0;
   }
   .service-icon svg{width:20px;height:20px;}
-  .service-text h3{font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;}
+  .service-text h3, .service-text h2{font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;}
   .service-text p{color:#C9C4BA;font-size:0.95rem;max-width:560px;}
 
   /* ---------- PRICING ---------- */
@@ -226,7 +228,7 @@
   .port-thumb svg{width:46px;height:46px;opacity:0.8;}
   .port-body{padding:20px 22px;}
   .port-body .kicker{color:#82A694;font-size:0.78rem;font-weight:600;margin-bottom:6px;}
-  .port-body h3{font-family:'Inter',sans-serif;font-size:1.08rem;font-weight:600;color:#FAF5EE;margin-bottom:6px;}
+  .port-body h3, .port-body h2{font-family:'Inter',sans-serif;font-size:1.08rem;font-weight:600;color:#FAF5EE;margin-bottom:6px;}
   .port-body p{color:#C9C4BA;font-size:0.88rem;}
 
   /* ---------- ABOUT ---------- */
@@ -321,9 +323,9 @@
     border:1px solid rgba(130,166,148,0.18);border-radius:6px;padding:28px;
     background:rgba(130,166,148,0.03);
   }
-  .contact-card h3{font-family:'Inter',sans-serif;font-size:1.05rem;color:#FFFFFF;margin-bottom:8px;}
+  .contact-card h3, .contact-card h2{font-family:'Inter',sans-serif;font-size:1.05rem;color:#FFFFFF;margin-bottom:8px;}
   .contact-card p{color:#C9C4BA;font-size:0.92rem;margin-bottom:16px;}
-  @media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+  @media (max-width:860px){.contact-grid{grid-template-columns:minmax(0,1fr);}}
 
   /* ---------- PILLARS (home teaser cards) ---------- */
   .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
@@ -382,7 +384,7 @@
   .legal-content h2:first-child{margin-top:0;}
   .legal-content p{color:#C9C4BA;font-size:0.92rem;margin-bottom:12px;line-height:1.65;}
   .legal-content ul{color:#C9C4BA;font-size:0.92rem;margin:0 0 12px 20px;line-height:1.65;}
-  .legal-content table{width:100%;border-collapse:collapse;margin:16px 0;font-size:0.86rem;}
+  .legal-content table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:16px 0;font-size:0.86rem;}
   .legal-content th,.legal-content td{border:1px solid rgba(130,166,148,0.18);padding:10px 12px;text-align:left;color:#C9C4BA;}
   .legal-content th{color:#FAF5EE;}
   .legal-content .placeholder{color:#9DC9AF;}
@@ -422,16 +424,24 @@
   .port-thumb svg{width:100%;height:100%;position:relative;z-index:1;}
   .port-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
 
+
+  /* móviles muy pequeños (≤480px) */
+  .btn-primary,.btn-ghost{max-width:100%;overflow-wrap:anywhere;}
+  @media (max-width:480px){
+    .niche-grid{grid-template-columns:1fr;}
+    .contact-card{padding:22px 18px;}
+  }
+
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Richard Richi Studio",
-  "image": "https://www.richardrichistudio.es/img/og-image.jpg",
-  "url": "https://www.richardrichistudio.es/",
+  "image": "https://richardrichistudio.es/img/og-image.jpg",
+  "url": "https://richardrichistudio.es/",
   "telephone": "+34679286348",
-  "email": "mailto:richardrichistudio@gmail.com",
+  "email": "richardrichistudio@gmail.com",
   "priceRange": "€€",
   "address": {
     "@type": "PostalAddress",
@@ -446,8 +456,7 @@
   ],
   "sameAs": [
     "https://instagram.com/richardrichi_",
-    "https://www.linkedin.com/in/richard-l%C3%B3pez-pascual-223346110/",
-    "https://richard-richi.github.io/links"
+    "https://www.linkedin.com/in/richard-l%C3%B3pez-pascual-223346110/"
   ]
 }
 </script>
@@ -463,15 +472,15 @@
         <span style="color:#FAF5EE;">Richard Richi Studio</span>
       </a>
     </div>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Principal">
         <a href="index.html">Inicio</a>
-        <a class="active" href="diseno-web.html">Diseño web</a>
+        <a class="active" aria-current="page" href="diseno-web.html">Diseño web</a>
         <a href="seo-local.html">SEO local</a>
         <a href="proyectos.html">Proyectos</a>
         <a href="sobre-mi.html">Sobre mí</a>
         <a href="contacto.html">Contacto</a>
     </nav>
-    <a class="nav-cta" href="https://wa.me/34679286348" target="_blank" rel="noopener">Hablemos por WhatsApp</a>
+    <a class="nav-cta" href="https://wa.me/34679286348?text=Hola%20Richard%2C%20vengo%20de%20tu%20web%20y%20me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20mi%20negocio." target="_blank" rel="noopener">Hablemos por WhatsApp</a>
   </div>
 </header>
 
@@ -491,7 +500,7 @@
       <div class="service-row">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div>
         <div class="service-text">
-          <h3>Diseño de páginas web</h3>
+          <h2>Diseño de páginas web</h2>
           <p>Tu web desde cero, pensada para lo que necesita tu negocio, no una plantilla genérica.</p>
         </div>
       </div>
@@ -499,7 +508,7 @@
       <div class="service-row">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M4 4v5h5M20 20v-5h-5"/><path d="M5.6 9A8 8 0 0119.4 9M18.4 15a8 8 0 01-13.8 0"/></svg></div>
         <div class="service-text">
-          <h3>Rediseño de páginas web</h3>
+          <h2>Rediseño de páginas web</h2>
           <p>Si ya tienes web pero está anticuada o no convierte, la renuevo sin perder lo que ya funciona.</p>
         </div>
       </div>
@@ -507,7 +516,7 @@
       <div class="service-row">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
         <div class="service-text">
-          <h3>Landing page</h3>
+          <h2>Landing page</h2>
           <p>Una sola página, directa al grano, para presentar tu negocio o un servicio concreto y captar contactos.</p>
         </div>
       </div>
@@ -515,7 +524,7 @@
       <div class="service-row">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h0a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51h0a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
         <div class="service-text">
-          <h3>Mantenimiento web</h3>
+          <h2>Mantenimiento web</h2>
           <p>Cambios de contenido, revisiones y soporte continuo para que la web no se quede parada en el tiempo.</p>
         </div>
       </div>
@@ -523,7 +532,7 @@
       <div class="service-row">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><rect x="5" y="5" width="5" height="5"/><rect x="14" y="5" width="5" height="5"/><rect x="5" y="14" width="5" height="5"/><path d="M14 14h2v2h-2zM19 14v5h-5v-2h3v-3z"/></svg></div>
         <div class="service-text">
-          <h3>Carta digital con QR</h3>
+          <h2>Carta digital con QR</h2>
           <p>El cliente escanea y ve la carta al momento, sin apps ni comisiones por pedido.</p>
         </div>
       </div>
@@ -531,7 +540,7 @@
       <div class="service-row">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M12 2a5 5 0 015 5v2a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M8 15v2a4 4 0 008 0v-2"/></svg></div>
         <div class="service-text">
-          <h3>Automatización con IA</h3>
+          <h2>Automatización con IA</h2>
           <p>Chatbots y respuestas automáticas que atienden consultas básicas fuera de horario, sin perder cercanía.</p>
         </div>
       </div>
@@ -558,7 +567,7 @@
     <div class="section-kicker">Presupuesto</div>
     <h2>Cada negocio necesita algo distinto</h2>
     <p>Prefiero hablar contigo antes de dar una cifra al aire — cuéntame qué necesitas y te paso un precio cerrado, sin sorpresas después.</p>
-    <a class="btn-primary" href="https://wa.me/34679286348" target="_blank" rel="noopener">Cuéntame tu proyecto</a>
+    <a class="btn-primary" href="https://wa.me/34679286348?text=Hola%20Richard%2C%20vengo%20de%20tu%20web%20y%20me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20mi%20negocio." target="_blank" rel="noopener">Cuéntame tu proyecto</a>
   </div>
 </section>
 
@@ -568,7 +577,7 @@
     <div class="footer-row">
       <img src="img/icon.png" alt="RR" width="550" height="287" style="height:22px;width:auto;">
       <div class="footer-links">
-        <a href="https://richard-richi.github.io/links" target="_blank" rel="noopener">Todos mis enlaces</a>
+        <a href="links/">Todos mis enlaces</a>
         <a href="https://instagram.com/richardrichi_" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.linkedin.com/in/richard-l%C3%B3pez-pascual-223346110/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:richardrichistudio@gmail.com">richardrichistudio@gmail.com</a>
@@ -656,6 +665,16 @@
     }, 1500);
   } catch(e) { showAll(); }
 })();
+</script>
+
+<script>
+document.addEventListener("click", function(e){
+  var a = e.target.closest && e.target.closest("a");
+  if(!a || !window.gtag) return;
+  var h = a.getAttribute("href") || "";
+  if(h.indexOf("wa.me") > -1) gtag("event", "whatsapp_click", { pagina: location.pathname });
+  else if(h.indexOf("mailto:") === 0) gtag("event", "email_click", { pagina: location.pathname });
+});
 </script>
 
 </body>

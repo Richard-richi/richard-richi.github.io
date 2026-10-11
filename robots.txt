@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.richardrichistudio.es/sitemap.xml
+Sitemap: https://richardrichistudio.es/sitemap.xml
