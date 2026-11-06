@@ -432,6 +432,31 @@
     .contact-card{padding:22px 18px;}
   }
 
+
+  /* ---------- AJUSTES MÓVIL (v3) ---------- */
+  @media (max-width:640px){
+    .nav{padding:10px 16px;row-gap:6px;}
+    .nav-brand img{height:24px;}
+    .nav-brand span{font-size:.95rem;}
+    .nav-cta{padding:7px 12px;font-size:.8rem;}
+    .nav-cta-long{display:none;}
+    .nav-links{gap:18px;font-size:.92rem;-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent);mask-image:linear-gradient(90deg,#000 90%,transparent);}
+    .contact-ctas{display:grid;gap:12px;max-width:320px;margin:0 auto;}
+    .contact-ctas a{text-align:center;}
+    .footer-links{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;text-align:left;}
+  }
+  @media (max-width:860px){
+    .hero{padding-top:40px;}
+    .hero-photo-wrap{order:2;margin:24px 0 0;}
+    .hero-photo{max-width:none;aspect-ratio:auto;}
+    .hero-photo img{max-height:380px;width:100%;object-fit:cover;object-position:top center;}
+    .hero-tag{left:12px;bottom:-14px;}
+    .about-photo{display:none;}
+  }
+  @media (max-width:480px){
+    .process-list{grid-template-columns:1fr;}
+    .trust-strip{gap:12px 20px;}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -480,7 +505,7 @@
         <a href="sobre-mi.html">Sobre mí</a>
         <a class="active" aria-current="page" href="contacto.html">Contacto</a>
     </nav>
-    <a class="nav-cta" href="https://wa.me/34679286348?text=Hola%20Richard%2C%20vengo%20de%20tu%20web%20y%20me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20mi%20negocio." target="_blank" rel="noopener">Hablemos por WhatsApp</a>
+    <a class="nav-cta" href="https://wa.me/34679286348?text=Hola%20Richard%2C%20vengo%20de%20tu%20web%20y%20me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20mi%20negocio." target="_blank" rel="noopener"><span class="nav-cta-long">Hablemos por </span>WhatsApp</a>
   </div>
 </header>
 
