@@ -441,8 +441,15 @@
   .rev-summary .rev-stars{color:#82A694;letter-spacing:2px;}
   .rev-summary a{color:#82A694;font-weight:600;text-decoration:none;}
   .rev-summary a:hover{text-decoration:underline;}
-  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  @media (max-width:980px){.rev-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}}
+  .rev-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px;margin:0 -2px;}
+  .rev-track::-webkit-scrollbar{display:none;}
+  .rev-track:focus-visible{outline:2px solid #82A694;outline-offset:4px;}
+  .rev-card{flex:0 0 min(360px,84%);scroll-snap-align:start;}
+  .rev-nav{display:flex;gap:12px;justify-content:center;margin-top:24px;}
+  .rev-nav button{width:46px;height:46px;border-radius:50%;border:1px solid rgba(130,166,148,0.45);background:transparent;color:#82A694;font-size:1.4rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s,opacity .2s;}
+  .rev-nav button:hover:not(:disabled){background:#82A694;color:#0A0B0A;}
+  .rev-nav button:disabled{opacity:.3;cursor:default;}
+  .rev-nav button:focus-visible{outline:2px solid #82A694;outline-offset:3px;}
   .rev-card{margin:0;padding:26px;border:1px solid rgba(130,166,148,0.18);border-radius:6px;background:#0A0B0A;}
   .rev-card .rev-stars{color:#82A694;letter-spacing:2px;margin-bottom:12px;}
   .rev-card blockquote{margin:0 0 18px;color:#FAF5EE;font-size:1.05rem;line-height:1.55;}
@@ -557,7 +564,7 @@
     <div>
       <div class="hero-eyebrow">Diseño web, SEO local y Google Ads en Guadalajara</div>
       <h1>Webs para autónomos y negocios locales que quieren <em>más clientes</em></h1>
-      <p class="lead">Diseño tu web, te posiciono en Google Maps y monto tus campañas de Google Ads, para que te encuentren y te llamen. Pensado para fontaneros, talleres, transportistas y negocios de Guadalajara, Alcalá de Henares y Azuqueca.</p>
+      <p class="lead">Diseño tu web, te posiciono en Google Maps y monto tus campañas de Google Ads, para que te encuentren y te llamen. Pensado para fontaneros, talleres, transportistas y negocios de Guadalajara, Alcalá de Henares y Azuqueca, y en remoto para toda España.</p>
       <div class="hero-ctas">
         <a class="btn-primary" href="https://wa.me/34679286348?text=Hola%20Richard%2C%20vengo%20de%20tu%20web%20y%20me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20mi%20negocio." target="_blank" rel="noopener">Cuéntame tu proyecto</a>
         <a class="btn-ghost" href="proyectos.html">Ver trabajos</a>
@@ -587,7 +594,7 @@
     <div class="section-kicker">Reseñas</div>
     <h2 id="resenas-titulo">Lo que dicen en Google</h2>
     <p class="rev-summary"><strong>5,0</strong> <span class="rev-stars" aria-hidden="true">★★★★★</span> · 5 reseñas en Google · <a href="https://share.google/xC6khMRZepjVvxYop" target="_blank" rel="noopener">Ver todas las reseñas en Google →</a></p>
-    <div class="rev-grid">
+    <div class="rev-track" id="revTrack" tabindex="0" role="region" aria-label="Reseñas de clientes (desliza o usa las flechas)">
       <figure class="rev-card">
         <div class="rev-stars" aria-label="5 estrellas">★★★★★</div>
         <blockquote>“Me ayudó muchísimo con mi web de fontanería y mi ficha de Google Maps, no dudaría en volver a trabajar con él.”</blockquote>
@@ -613,6 +620,10 @@
         <blockquote>“Inmejorable. Gran profesionalidad. Sin duda alguna.”</blockquote>
         <figcaption><strong>José María Mora Agudo</strong><br>Reseña en Google</figcaption>
       </figure>
+    </div>
+    <div class="rev-nav">
+      <button type="button" id="revPrev" aria-label="Reseña anterior">‹</button>
+      <button type="button" id="revNext" aria-label="Reseña siguiente">›</button>
     </div>
   </div>
 </section>
@@ -776,7 +787,7 @@
       <img src="img/avatar.jpg" alt="Richard, fundador de Richard Richi Studio" width="660" height="825" loading="lazy">
     </div>
     <div class="about-text">
-      <p><strong>Hago webs desde Molina de Aragón</strong>, en el corazón del Alto Tajo. Antes de dedicarme a esto ya andaba metido en proyectos digitales por mi cuenta — ahora lo combino con el grado de Desarrollo de Aplicaciones Multiplataforma, así que cada web lleva detrás algo más que plantillas.</p>
+      <p><strong>Hago webs desde Molina de Aragón</strong>, en el corazón del Alto Tajo, y trabajo en remoto con negocios de toda España. Antes de dedicarme a esto ya andaba metido en proyectos digitales por mi cuenta — ahora lo combino con el grado de Desarrollo de Aplicaciones Multiplataforma, así que cada web lleva detrás algo más que plantillas.</p>
       <p>Trabajo con negocios pequeños que no necesitan una agencia cara, sino alguien que entienda lo que quieren conseguir y se lo entregue sin vueltas.</p>
       <p style="margin-top:18px;"><a class="pillar-link" style="color:#82A694;font-weight:600;text-decoration:none;" href="sobre-mi.html">Más sobre Richard →</a></p>
     </div>
@@ -938,5 +949,17 @@ document.addEventListener("click", function(e){
 });
 </script>
 
+<script>
+(function(){
+  var t=document.getElementById("revTrack"),p=document.getElementById("revPrev"),n=document.getElementById("revNext");
+  if(!t||!p||!n) return;
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function step(){var c=t.querySelector(".rev-card");return c?c.getBoundingClientRect().width+20:300;}
+  function upd(){p.disabled=t.scrollLeft<=4;n.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-4;}
+  p.addEventListener("click",function(){t.scrollBy({left:-step(),behavior:reduce?"auto":"smooth"});});
+  n.addEventListener("click",function(){t.scrollBy({left:step(),behavior:reduce?"auto":"smooth"});});
+  t.addEventListener("scroll",upd,{passive:true});window.addEventListener("resize",upd);upd();
+})();
+</script>
 </body>
 </html>
