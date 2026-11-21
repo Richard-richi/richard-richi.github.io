@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#050505">
 <title>Diseño web por oficios — Richard Richi Studio</title>
-<meta name="description" content="Diseño web y ficha de Google adaptados a cada oficio: fontaneros, dietistas y fisioterapeutas, y más. Trato directo y precio cerrado.">
+<meta name="description" content="Diseño web y ficha de Google adaptados a cada oficio: fontaneros, electricistas, talleres, dentistas, restaurantes y más. Trato directo y precio cerrado.">
 <link rel="canonical" href="https://richardrichistudio.es/webs-por-oficio.html">
 
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
 
 <meta property="og:title" content="Diseño web por oficios — Richard Richi Studio">
-<meta property="og:description" content="Diseño web y ficha de Google adaptados a cada oficio: fontaneros, dietistas y fisioterapeutas, y más. Trato directo y precio cerrado.">
+<meta property="og:description" content="Diseño web y ficha de Google adaptados a cada oficio: fontaneros, electricistas, talleres, dentistas, restaurantes y más. Trato directo y precio cerrado.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://richardrichistudio.es/webs-por-oficio.html">
 <meta property="og:locale" content="es_ES">
@@ -23,7 +23,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Diseño web por oficios — Richard Richi Studio">
-<meta name="twitter:description" content="Diseño web y ficha de Google adaptados a cada oficio: fontaneros, dietistas y fisioterapeutas, y más. Trato directo y precio cerrado.">
+<meta name="twitter:description" content="Diseño web y ficha de Google adaptados a cada oficio: fontaneros, electricistas, talleres, dentistas, restaurantes y más. Trato directo y precio cerrado.">
 <meta name="twitter:image" content="https://richardrichistudio.es/img/og-image.jpg">
 
 <script>
@@ -472,6 +472,39 @@
   .rev-card blockquote{margin:0 0 18px;color:#FAF5EE;font-size:1.05rem;line-height:1.55;}
   .rev-card figcaption{color:#C9C4BA;font-size:.9rem;}
   .rev-card figcaption strong{color:#FAF5EE;}
+
+  /* ===== ESTILO v10: iconos y tarjetas ===== */
+  .service-list{column-gap:24px;row-gap:24px;}
+  .service-row,.service-row:nth-child(-n+2),.service-row:nth-last-child(-n+2),.service-row:nth-child(1){
+    padding:28px;border:1px solid rgba(130,166,148,0.18);border-radius:18px;
+    background:linear-gradient(160deg,rgba(130,166,148,0.09),rgba(255,255,255,0.01) 60%);
+    grid-template-columns:64px 1fr;gap:22px;align-items:start;
+    transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+  }
+  .service-row:hover{transform:translateY(-3px);border-color:rgba(130,166,148,0.45);box-shadow:0 18px 40px -22px rgba(130,166,148,0.55);}
+  .service-icon,.pillar-icon,.niche-icon{
+    border:1px solid rgba(130,166,148,0.45);
+    background:radial-gradient(circle at 30% 25%,rgba(130,166,148,0.38),rgba(130,166,148,0.07) 70%);
+    box-shadow:0 10px 26px -12px rgba(130,166,148,0.7), inset 0 1px 0 rgba(255,255,255,0.12);
+  }
+  .service-icon svg,.pillar-icon svg,.niche-icon svg{stroke:#BFE0CE;stroke-width:1.7;fill:rgba(130,166,148,0.18);stroke-linecap:round;stroke-linejoin:round;}
+  .service-icon{width:64px;height:64px;border-radius:18px;}
+  .service-icon svg{width:30px;height:30px;}
+  .pillar-icon{width:52px;height:52px;border-radius:15px;margin-bottom:18px;}
+  .pillar-icon svg{width:24px;height:24px;}
+  .niche-icon{width:44px;height:44px;border-radius:13px;margin-bottom:14px;}
+  .niche-icon svg{width:21px;height:21px;}
+  .pillar-card,.niche-card{border-radius:18px;background:linear-gradient(160deg,rgba(130,166,148,0.08),rgba(255,255,255,0.01) 60%);}
+  .pillar-card:hover,.niche-card:hover{box-shadow:0 18px 40px -22px rgba(130,166,148,0.55);}
+  .service-text h2{font-size:1.22rem;margin-bottom:8px;}
+  .process-step{padding:22px 22px 22px;border:1px solid rgba(130,166,148,0.14);border-radius:16px;background:rgba(255,255,255,0.015);}
+  .process-num{position:static;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
+    background:rgba(130,166,148,0.16);border:1px solid rgba(130,166,148,0.4);color:#BFE0CE;margin-bottom:14px;}
+  @media (max-width:860px){
+    .service-row,.service-row:nth-child(-n+2),.service-row:nth-last-child(-n+2),.service-row:nth-child(1){padding:22px;grid-template-columns:56px 1fr;gap:18px;}
+    .service-icon{width:56px;height:56px;border-radius:16px;}
+    .service-icon svg{width:26px;height:26px;}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -481,21 +514,159 @@
       "@type": "CollectionPage",
       "name": "Diseño web por oficios — Richard Richi Studio",
       "url": "https://richardrichistudio.es/webs-por-oficio.html",
-      "description": "Diseño web y ficha de Google adaptados a cada oficio: fontaneros, dietistas y fisioterapeutas, y más. Trato directo y precio cerrado.",
+      "description": "Diseño web y ficha de Google adaptados a cada oficio: fontaneros, electricistas, talleres, dentistas, restaurantes y más. Trato directo y precio cerrado.",
       "mainEntity": {
         "@type": "ItemList",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
+            "name": "Diseño web para cerrajeros",
+            "url": "https://richardrichistudio.es/diseno-web-cerrajeros.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Diseño web para climatización y aerotermia",
+            "url": "https://richardrichistudio.es/diseno-web-climatizacion-aerotermia.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Diseño web para control de plagas",
+            "url": "https://richardrichistudio.es/diseno-web-control-plagas.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Diseño web para desatascos y limpieza de tuberías",
+            "url": "https://richardrichistudio.es/diseno-web-desatascos.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Diseño web para electricistas y placas solares",
+            "url": "https://richardrichistudio.es/diseno-web-electricistas-placas-solares.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
             "name": "Diseño web para fontaneros",
             "url": "https://richardrichistudio.es/diseno-web-fontaneros.html"
           },
           {
             "@type": "ListItem",
-            "position": 2,
+            "position": 7,
+            "name": "Diseño web para autoescuelas",
+            "url": "https://richardrichistudio.es/diseno-web-autoescuelas.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "name": "Diseño web para carrocería y reparación de abolladuras",
+            "url": "https://richardrichistudio.es/diseno-web-carroceria-abolladuras.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "name": "Diseño web para talleres mecánicos",
+            "url": "https://richardrichistudio.es/diseno-web-talleres-mecanicos.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "name": "Diseño web para taxis y VTC",
+            "url": "https://richardrichistudio.es/diseno-web-taxis-vtc.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 11,
+            "name": "Diseño web para transportes y mudanzas",
+            "url": "https://richardrichistudio.es/diseno-web-transportes-mudanzas.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 12,
+            "name": "Diseño web para carpinteros y cerramientos",
+            "url": "https://richardrichistudio.es/diseno-web-carpinteros-cerramientos.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 13,
+            "name": "Diseño web para empresas de limpieza",
+            "url": "https://richardrichistudio.es/diseno-web-limpieza.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 14,
+            "name": "Diseño web para jardinería y paisajismo",
+            "url": "https://richardrichistudio.es/diseno-web-jardineria-paisajismo.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 15,
+            "name": "Diseño web para reformas, albañiles y pintores",
+            "url": "https://richardrichistudio.es/diseno-web-reformas-albanileria.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 16,
+            "name": "Diseño web para clínicas dentales",
+            "url": "https://richardrichistudio.es/diseno-web-dentistas.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 17,
             "name": "Diseño web para dietistas y fisioterapeutas",
             "url": "https://richardrichistudio.es/diseno-web-dietistas-fisioterapeutas.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 18,
+            "name": "Diseño web para peluquerías y estética",
+            "url": "https://richardrichistudio.es/diseno-web-peluquerias-estetica.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 19,
+            "name": "Diseño web para veterinarios",
+            "url": "https://richardrichistudio.es/diseno-web-veterinarios.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 20,
+            "name": "Diseño web para fotógrafos",
+            "url": "https://richardrichistudio.es/diseno-web-fotografos.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 21,
+            "name": "Diseño web para gestorías y asesorías",
+            "url": "https://richardrichistudio.es/diseno-web-gestorias-asesorias.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 22,
+            "name": "Diseño web para inmobiliarias",
+            "url": "https://richardrichistudio.es/diseno-web-inmobiliarias.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 23,
+            "name": "Diseño web para restaurantes y carta digital con QR",
+            "url": "https://richardrichistudio.es/diseno-web-restaurantes-carta-digital.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 24,
+            "name": "Diseño web para casas rurales y turismo activo",
+            "url": "https://richardrichistudio.es/diseno-web-casas-rurales-turismo-activo.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 25,
+            "name": "Diseño web para entrenadores personales y gimnasios",
+            "url": "https://richardrichistudio.es/diseno-web-entrenadores-gimnasios.html"
           }
         ]
       }
@@ -539,25 +710,199 @@
 </section>
 
 <section id="oficios">
-  <div class="wrap">
+  <div class="wrap" style="padding-bottom:24px;">
+    <h2 style="font-size:1.5rem;margin:8px 0 22px;">Urgencias y reparaciones</h2>
     <div class="service-list">
-
       <div class="service-row">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></div>
         <div class="service-text">
-          <h2><a href="diseno-web-fontaneros.html" style="color:inherit;text-decoration:none;">Diseño web para fontaneros</a></h2>
-          <p>Llamada y WhatsApp a un toque, zonas de servicio claras y la ficha de Google Maps bien trabajada. <a href="diseno-web-fontaneros.html" style="color:#82A694;font-weight:600;text-decoration:none;">Ver cómo lo hago →</a></p>
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-fontaneros.html" style="color:inherit;text-decoration:none;">Diseño web para fontaneros</a></h3>
+          <p>Llamada y WhatsApp a un toque, zonas de servicio claras y ficha de Google bien trabajada. <a href="diseno-web-fontaneros.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
         </div>
       </div>
-
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-electricistas-placas-solares.html" style="color:inherit;text-decoration:none;">Diseño web para electricistas y placas solares</a></h3>
+          <p>Urgencias, instalaciones y proyectos solares explicados con claridad. <a href="diseno-web-electricistas-placas-solares.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-desatascos.html" style="color:inherit;text-decoration:none;">Diseño web para desatascos y limpieza de tuberías</a></h3>
+          <p>Urgencias, zonas de servicio y ficha de Google optimizada. <a href="diseno-web-desatascos.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M12 2v20M4 7l16 10M20 7L4 17"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-climatizacion-aerotermia.html" style="color:inherit;text-decoration:none;">Diseño web para climatización y aerotermia</a></h3>
+          <p>Instalación y mantenimiento explicados con claridad. <a href="diseno-web-climatizacion-aerotermia.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-cerrajeros.html" style="color:inherit;text-decoration:none;">Diseño web para cerrajeros</a></h3>
+          <p>Urgencias, transparencia y ficha de Google optimizada. <a href="diseno-web-cerrajeros.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><ellipse cx="12" cy="13" rx="4" ry="6"/><path d="M12 7V4M8 9L5 7M16 9l3-2M8 13H4M16 13h4M8 17l-3 2M16 17l3 2"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-control-plagas.html" style="color:inherit;text-decoration:none;">Diseño web para control de plagas</a></h3>
+          <p>Urgencias, discreción y confianza para quien tiene un problema. <a href="diseno-web-control-plagas.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+    </div>
+    <h2 style="font-size:1.5rem;margin:48px 0 22px;">Automoción y transporte</h2>
+    <div class="service-list">
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-talleres-mecanicos.html" style="color:inherit;text-decoration:none;">Diseño web para talleres mecánicos</a></h3>
+          <p>Servicios claros, ubicación y petición de cita por WhatsApp. <a href="diseno-web-talleres-mecanicos.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M2 6h12v10H2zM14 9h4l3 3v4h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-transportes-mudanzas.html" style="color:inherit;text-decoration:none;">Diseño web para transportes y mudanzas</a></h3>
+          <p>Zonas de servicio, presupuesto rápido y contacto directo. <a href="diseno-web-transportes-mudanzas.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M4 15v-3l2-5h12l2 5v3zM4 15v3h3v-3M17 15v3h3v-3"/><circle cx="8" cy="12.5" r=".9"/><circle cx="16" cy="12.5" r=".9"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-taxis-vtc.html" style="color:inherit;text-decoration:none;">Diseño web para taxis y VTC</a></h3>
+          <p>Reservas directas, traslados y ficha de Google optimizada. <a href="diseno-web-taxis-vtc.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-carroceria-abolladuras.html" style="color:inherit;text-decoration:none;">Diseño web para carrocería y reparación de abolladuras</a></h3>
+          <p>Resultados visuales y presupuesto desde una foto por WhatsApp. <a href="diseno-web-carroceria-abolladuras.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-autoescuelas.html" style="color:inherit;text-decoration:none;">Diseño web para autoescuelas</a></h3>
+          <p>Permisos, horarios y matrícula explicados con claridad. <a href="diseno-web-autoescuelas.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+    </div>
+    <h2 style="font-size:1.5rem;margin:48px 0 22px;">Hogar y exteriores</h2>
+    <div class="service-list">
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M5 19C5 10 11 4 20 4c0 9-6 15-15 15zM5 19l8-8"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-jardineria-paisajismo.html" style="color:inherit;text-decoration:none;">Diseño web para jardinería y paisajismo</a></h3>
+          <p>Una web visual para mostrar tus trabajos y recibir presupuestos. <a href="diseno-web-jardineria-paisajismo.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-reformas-albanileria.html" style="color:inherit;text-decoration:none;">Diseño web para reformas, albañiles y pintores</a></h3>
+          <p>Obras reales, presupuesto con visita y confianza para el cliente. <a href="diseno-web-reformas-albanileria.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><rect x="3" y="8" width="18" height="8" rx="1"/><path d="M7 8v3M11 8v4M15 8v3M19 8v4"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-carpinteros-cerramientos.html" style="color:inherit;text-decoration:none;">Diseño web para carpinteros y cerramientos</a></h3>
+          <p>Trabajos a medida y presupuesto con medidas y fotos por WhatsApp. <a href="diseno-web-carpinteros-cerramientos.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-limpieza.html" style="color:inherit;text-decoration:none;">Diseño web para empresas de limpieza</a></h3>
+          <p>Confianza, servicios claros y presupuesto rápido. <a href="diseno-web-limpieza.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+    </div>
+    <h2 style="font-size:1.5rem;margin:48px 0 22px;">Salud y bienestar</h2>
+    <div class="service-list">
       <div class="service-row">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
         <div class="service-text">
-          <h2><a href="diseno-web-dietistas-fisioterapeutas.html" style="color:inherit;text-decoration:none;">Diseño web para dietistas y fisioterapeutas</a></h2>
-          <p>Pedir cita fácil, servicios explicados con claridad y textos prudentes, sin promesas de resultados. <a href="diseno-web-dietistas-fisioterapeutas.html" style="color:#82A694;font-weight:600;text-decoration:none;">Ver cómo lo hago →</a></p>
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-dietistas-fisioterapeutas.html" style="color:inherit;text-decoration:none;">Diseño web para dietistas y fisioterapeutas</a></h3>
+          <p>Pedir cita fácil, servicios claros y textos prudentes, sin promesas de resultados. <a href="diseno-web-dietistas-fisioterapeutas.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
         </div>
       </div>
-
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 8l11 9M8.5 16l11-9"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-peluquerias-estetica.html" style="color:inherit;text-decoration:none;">Diseño web para peluquerías y estética</a></h3>
+          <p>Citas, fotos de tu trabajo y ficha de Google optimizada. <a href="diseno-web-peluquerias-estetica.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M8 3c-3 0-4 3-4 5 0 3 2 5 2.5 8 .4 3 1.3 5 2.5 5s1.4-4 3-4 1.8 4 3 4 2.1-2 2.5-5c.5-3 2.5-5 2.5-8 0-2-1-5-4-5-2 0-2.5 1-4 1S10 3 8 3z"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-dentistas.html" style="color:inherit;text-decoration:none;">Diseño web para clínicas dentales</a></h3>
+          <p>Citas, tratamientos explicados y textos prudentes. <a href="diseno-web-dentistas.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><circle cx="7" cy="10" r="2"/><circle cx="12" cy="7" r="2"/><circle cx="17" cy="10" r="2"/><path d="M12 12c-3 0-5 3-5 5 0 2 2 2 5 2s5 0 5-2c0-2-2-5-5-5z"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-veterinarios.html" style="color:inherit;text-decoration:none;">Diseño web para veterinarios</a></h3>
+          <p>Citas, horarios y urgencias claras para las familias. <a href="diseno-web-veterinarios.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+    </div>
+    <h2 style="font-size:1.5rem;margin:48px 0 22px;">Comercio y servicios</h2>
+    <div class="service-list">
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M6 3v8M9 3v8M6 7h3M7.5 11v10M17 3c-2 2-2 6 0 8v10"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-restaurantes-carta-digital.html" style="color:inherit;text-decoration:none;">Diseño web para restaurantes y carta digital con QR</a></h3>
+          <p>Carta digital con QR, reservas y ficha de Google. <a href="diseno-web-restaurantes-carta-digital.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-inmobiliarias.html" style="color:inherit;text-decoration:none;">Diseño web para inmobiliarias</a></h3>
+          <p>Catálogo de propiedades, marca propia y contacto directo. <a href="diseno-web-inmobiliarias.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-fotografos.html" style="color:inherit;text-decoration:none;">Diseño web para fotógrafos</a></h3>
+          <p>Portfolio rápido y cuidado que te consigue clientes. <a href="diseno-web-fotografos.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-gestorias-asesorias.html" style="color:inherit;text-decoration:none;">Diseño web para gestorías y asesorías</a></h3>
+          <p>Servicios claros, confianza y consultas directas. <a href="diseno-web-gestorias-asesorias.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+    </div>
+    <h2 style="font-size:1.5rem;margin:48px 0 22px;">Turismo y deporte</h2>
+    <div class="service-list">
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M3 20l6-11 4 6 3-4 5 9z"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-casas-rurales-turismo-activo.html" style="color:inherit;text-decoration:none;">Diseño web para casas rurales y turismo activo</a></h3>
+          <p>Reservas directas, fotos que enamoran y actividades de la zona. <a href="diseno-web-casas-rurales-turismo-activo.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#82A694" stroke-width="1.6"><path d="M6 8v8M3 10v4M18 8v8M21 10v4M6 12h12"/></svg></div>
+        <div class="service-text">
+          <h3 style="font-size:1.18rem;color:#FAF5EE;font-weight:600;margin-bottom:6px;"><a href="diseno-web-entrenadores-gimnasios.html" style="color:inherit;text-decoration:none;">Diseño web para entrenadores personales y gimnasios</a></h3>
+          <p>Clases, servicios y primer contacto sin fricción. <a href="diseno-web-entrenadores-gimnasios.html" style="color:#82A694;font-weight:600;text-decoration:none;white-space:nowrap;">Ver cómo lo hago →</a></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -568,7 +913,7 @@
       <div class="section-kicker">¿No ves tu oficio?</div>
       <h2>Si trabajas en otro sector, también puedo ayudarte</h2>
     </div>
-    <p style="color:#C9C4BA;max-width:680px;margin-bottom:14px;">Voy añadiendo oficios poco a poco, cuando tengo algo propio que contar de cada uno. Si el tuyo no está todavía, escríbeme: el planteamiento es el mismo y lo adapto a tu negocio.</p>
+    <p style="color:#C9C4BA;max-width:680px;margin-bottom:14px;">Voy añadiendo oficios y casos reales poco a poco. Si el tuyo no está todavía, escríbeme: el planteamiento es el mismo y lo adapto a tu negocio.</p>
   </div>
 </section>
 
